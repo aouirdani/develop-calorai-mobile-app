@@ -8,23 +8,13 @@ signalées ci-dessous).
 ## Démarrage
 
 ```bash
-# 1. Créer le projet Expo (si vous partez d'un repo vide)
-npx create-expo-app calorai --template blank-typescript
-# 2. Copier à la racine du projet : app/  components/  services/  types/
-#    hooks/  store/  constants/  utils/  assets/  app.json
-#    puis renommer tsconfig.expo.json → tsconfig.json
-# 3. Fusionner les dépendances puis les installer aux versions SDK :
-npx expo install expo-router expo-camera expo-image-picker expo-secure-store \
-  expo-status-bar expo-linear-gradient expo-constants expo-linking \
-  @react-native-async-storage/async-storage react-native-safe-area-context \
-  react-native-screens react-native-svg @expo/vector-icons
-npx expo install --fix
-# 4. Lancer
-npx expo start
+npm install
+cp .env.example .env     # configuration : voir README à la racine
+npx expo start -c
 ```
 
 > Le point d'entrée est `expo-router/entry` (`"main"` dans package.json).
-> Vérification des types : `npx tsc --noEmit`.
+> Vérification des types : `npx tsc --noEmit --project tsconfig.expo.json`.
 
 ## Architecture
 
