@@ -1,0 +1,235 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bricolage Grotesque", "Instrument Sans", ui-sans-serif, sans-serif;
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Coquille (fond de scène) */
+  --color-shell-950: #090f0b;
+  --color-shell-900: #0c130e;
+  --color-shell-800: #121d15;
+  --color-shell-700: #1a2a1f;
+  --color-shell-600: #24382b;
+  --color-shell-500: #35503f;
+  --color-shell-400: #4e6355;
+  --color-shell-300: #7c8f80;
+  --color-shell-200: #aebbb0;
+
+  --color-lime-glow: #c8f169;
+  --color-lime-soft: #e3fba8;
+  --color-lime-ink: #3c4a12;
+
+  /* Application (intérieur du téléphone) */
+  --color-paper: #f2f4ec;
+  --color-card: #fcfcf8;
+  --color-field: #f5f7ee;
+  --color-cardline: #e2e6d6;
+  --color-cardline-2: #d2d8c4;
+  --color-ink: #182720;
+  --color-ink-2: #3e4e42;
+  --color-mut: #6c7a68;
+  --color-faint: #98a493;
+
+  --color-pine: #1c5a3c;
+  --color-pine-2: #123e29;
+  --color-pine-3: #0e2e1f;
+  --color-pine-soft: #e1ecda;
+
+  --color-protein: #d95e3f;
+  --color-protein-soft: #fbe4dc;
+  --color-carbs: #de9a26;
+  --color-carbs-soft: #faefd8;
+  --color-fat: #3d8e85;
+  --color-fat-soft: #dfefec;
+
+  --color-warnbg: #f6eccf;
+  --color-warntext: #8a6a14;
+  --color-danger: #be4b32;
+  --color-danger-soft: #f7e2dc;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-shell-900);
+  color: #e6ede4;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+/* ---------- Animations ---------- */
+
+@keyframes kf-slide-r {
+  from {
+    transform: translateX(34px);
+    opacity: 0.3;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+.anim-slide-r {
+  animation: kf-slide-r 0.3s cubic-bezier(0.22, 0.9, 0.26, 1) both;
+}
+
+@keyframes kf-slide-l {
+  from {
+    transform: translateX(-34px);
+    opacity: 0.3;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+.anim-slide-l {
+  animation: kf-slide-l 0.26s cubic-bezier(0.22, 0.9, 0.26, 1) both;
+}
+
+@keyframes kf-fade-up {
+  from {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+.anim-fade-up {
+  animation: kf-fade-up 0.5s cubic-bezier(0.22, 0.9, 0.26, 1) both;
+}
+
+@keyframes kf-pop {
+  from {
+    transform: scale(0.94);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+.anim-pop {
+  animation: kf-pop 0.24s cubic-bezier(0.22, 0.9, 0.26, 1) both;
+}
+
+@keyframes kf-toast {
+  from {
+    transform: translateY(16px) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+.anim-toast {
+  animation: kf-toast 0.28s cubic-bezier(0.22, 0.9, 0.26, 1) both;
+}
+
+@keyframes kf-scanline {
+  0% {
+    top: 5%;
+  }
+  50% {
+    top: 90%;
+  }
+  100% {
+    top: 5%;
+  }
+}
+.anim-scanline {
+  animation: kf-scanline 3.4s ease-in-out infinite;
+}
+
+@keyframes kf-laser {
+  0% {
+    left: 10%;
+  }
+  50% {
+    left: 86%;
+  }
+  100% {
+    left: 10%;
+  }
+}
+.anim-laser {
+  animation: kf-laser 2.4s ease-in-out infinite;
+}
+
+@keyframes kf-shimmer {
+  from {
+    background-position: -200% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}
+.skeleton {
+  background: linear-gradient(90deg, #edf0e2 25%, #f8faf1 50%, #edf0e2 75%);
+  background-size: 200% 100%;
+  animation: kf-shimmer 1.3s linear infinite;
+}
+
+@keyframes kf-drift-a {
+  from {
+    transform: translate(-6%, -4%) scale(1);
+  }
+  to {
+    transform: translate(5%, 7%) scale(1.18);
+  }
+}
+.anim-drift-a {
+  animation: kf-drift-a 28s ease-in-out infinite alternate;
+}
+
+@keyframes kf-drift-b {
+  from {
+    transform: translate(4%, 6%) scale(1.1);
+  }
+  to {
+    transform: translate(-6%, -5%) scale(1);
+  }
+}
+.anim-drift-b {
+  animation: kf-drift-b 34s ease-in-out infinite alternate;
+}
+
+@keyframes kf-pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+.anim-pulse-soft {
+  animation: kf-pulse-soft 1.6s ease-in-out infinite;
+}
+
+@keyframes kf-ring-dash {
+  from {
+    stroke-dashoffset: var(--ring-c, 500);
+  }
+}
+.anim-ring {
+  animation: kf-ring-dash 1s cubic-bezier(0.22, 0.9, 0.26, 1) both;
+}

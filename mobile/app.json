@@ -1,0 +1,49 @@
+{
+  "expo": {
+    "name": "CalorAI",
+    "slug": "calorai",
+    "version": "1.0.0",
+    "scheme": "calorai",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#F2F4EC",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.calorai.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "CalorAI utilise la caméra pour photographier vos repas et scanner des codes-barres.",
+        "NSPhotoLibraryUsageDescription": "CalorAI accède à vos photos pour analyser une photo de repas existante."
+      }
+    },
+    "android": {
+      "package": "com.calorai.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#123E29"
+      },
+      "permissions": [
+        "CAMERA",
+        "READ_MEDIA_IMAGES"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "CalorAI utilise la caméra pour photographier vos repas et scanner des codes-barres."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "CalorAI accède à vos photos pour analyser une photo de repas."
+        }
+      ],
+      "expo-secure-store",
+      "expo-status-bar"
+    ]
+  }
+}
